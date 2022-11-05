@@ -10,3 +10,15 @@ D:\Программы\C#\Share Class\BusinessLogicLayer\obj\Debug\BusinessLogicL
 D:\Программы\C#\Share Class\BusinessLogicLayer\obj\Debug\BusinessLogicLayer.csproj.CoreCompileInputs.cache
 D:\Программы\C#\Share Class\BusinessLogicLayer\obj\Debug\BusinessLogicLayer.exe
 D:\Программы\C#\Share Class\BusinessLogicLayer\obj\Debug\BusinessLogicLayer.pdb
+D:\Учеба\GitHub\Share Class\BusinessLogicLayer\bin\Debug\BusinessLogicLayer.exe.config
+D:\Учеба\GitHub\Share Class\BusinessLogicLayer\bin\Debug\BusinessLogicLayer.exe
+D:\Учеба\GitHub\Share Class\BusinessLogicLayer\bin\Debug\BusinessLogicLayer.pdb
+D:\Учеба\GitHub\Share Class\BusinessLogicLayer\obj\Debug\BusinessLogicLayer.csproj.AssemblyReference.cache
+D:\Учеба\GitHub\Share Class\BusinessLogicLayer\obj\Debug\BusinessLogicLayer.csproj.SuggestedBindingRedirects.cache
+D:\Учеба\GitHub\Share Class\BusinessLogicLayer\obj\Debug\App.g.cs
+D:\Учеба\GitHub\Share Class\BusinessLogicLayer\obj\Debug\BusinessLogicLayer_MarkupCompile.cache
+D:\Учеба\GitHub\Share Class\BusinessLogicLayer\obj\Debug\BusinessLogicLayer.Properties.Resources.resources
+D:\Учеба\GitHub\Share Class\BusinessLogicLayer\obj\Debug\BusinessLogicLayer.csproj.GenerateResource.cache
+D:\Учеба\GitHub\Share Class\BusinessLogicLayer\obj\Debug\BusinessLogicLayer.csproj.CoreCompileInputs.cache
+D:\Учеба\GitHub\Share Class\BusinessLogicLayer\obj\Debug\BusinessLogicLayer.exe
+D:\Учеба\GitHub\Share Class\BusinessLogicLayer\obj\Debug\BusinessLogicLayer.pdb
