@@ -1,0 +1,12 @@
+D:\Программы\C#\Share Class\BusinessLogicLayer\bin\Debug\BusinessLogicLayer.exe.config
+D:\Программы\C#\Share Class\BusinessLogicLayer\bin\Debug\BusinessLogicLayer.exe
+D:\Программы\C#\Share Class\BusinessLogicLayer\bin\Debug\BusinessLogicLayer.pdb
+D:\Программы\C#\Share Class\BusinessLogicLayer\obj\Debug\BusinessLogicLayer.csproj.AssemblyReference.cache
+D:\Программы\C#\Share Class\BusinessLogicLayer\obj\Debug\BusinessLogicLayer.csproj.SuggestedBindingRedirects.cache
+D:\Программы\C#\Share Class\BusinessLogicLayer\obj\Debug\App.g.cs
+D:\Программы\C#\Share Class\BusinessLogicLayer\obj\Debug\BusinessLogicLayer_MarkupCompile.cache
+D:\Программы\C#\Share Class\BusinessLogicLayer\obj\Debug\BusinessLogicLayer.Properties.Resources.resources
+D:\Программы\C#\Share Class\BusinessLogicLayer\obj\Debug\BusinessLogicLayer.csproj.GenerateResource.cache
+D:\Программы\C#\Share Class\BusinessLogicLayer\obj\Debug\BusinessLogicLayer.csproj.CoreCompileInputs.cache
+D:\Программы\C#\Share Class\BusinessLogicLayer\obj\Debug\BusinessLogicLayer.exe
+D:\Программы\C#\Share Class\BusinessLogicLayer\obj\Debug\BusinessLogicLayer.pdb

@@ -1,0 +1,32 @@
+D:\Программы\C#\Share Class\Share Class\bin\Debug\Share Class.exe.config
+D:\Программы\C#\Share Class\Share Class\bin\Debug\Share Class.exe
+D:\Программы\C#\Share Class\Share Class\bin\Debug\Share Class.pdb
+D:\Программы\C#\Share Class\Share Class\obj\Debug\Share Class.csproj.AssemblyReference.cache
+D:\Программы\C#\Share Class\Share Class\obj\Debug\Share Class.csproj.SuggestedBindingRedirects.cache
+D:\Программы\C#\Share Class\Share Class\obj\Debug\Resources\ScrollBarResourceDictionary.baml
+D:\Программы\C#\Share Class\Share Class\obj\Debug\App.g.cs
+D:\Программы\C#\Share Class\Share Class\obj\Debug\Share Class_MarkupCompile.cache
+D:\Программы\C#\Share Class\Share Class\obj\Debug\Share Class_MarkupCompile.lref
+D:\Программы\C#\Share Class\Share Class\obj\Debug\App.baml
+D:\Программы\C#\Share Class\Share Class\obj\Debug\Share Class.g.resources
+D:\Программы\C#\Share Class\Share Class\obj\Debug\Share_Class.Properties.Resources.resources
+D:\Программы\C#\Share Class\Share Class\obj\Debug\Share Class.csproj.GenerateResource.cache
+D:\Программы\C#\Share Class\Share Class\obj\Debug\Share Class.csproj.CoreCompileInputs.cache
+D:\Программы\C#\Share Class\Share Class\obj\Debug\Share Class.exe
+D:\Программы\C#\Share Class\Share Class\obj\Debug\Share Class.pdb
+D:\Программы\C#\Share Class\Share Class\obj\Debug\Views\CreateClassDialog.g.cs
+D:\Программы\C#\Share Class\Share Class\obj\Debug\Views\JoinClassConfirmDialog.g.cs
+D:\Программы\C#\Share Class\Share Class\obj\Debug\Views\JoinClassDialog.g.cs
+D:\Программы\C#\Share Class\Share Class\obj\Debug\Views\LogInDialog.g.cs
+D:\Программы\C#\Share Class\Share Class\obj\Debug\Views\SignUpDialog.g.cs
+D:\Программы\C#\Share Class\Share Class\obj\Debug\Views\MainWindow.g.cs
+D:\Программы\C#\Share Class\Share Class\obj\Debug\Views\CreateClassDialog.baml
+D:\Программы\C#\Share Class\Share Class\obj\Debug\Views\JoinClassConfirmDialog.baml
+D:\Программы\C#\Share Class\Share Class\obj\Debug\Views\JoinClassDialog.baml
+D:\Программы\C#\Share Class\Share Class\obj\Debug\Views\LogInDialog.baml
+D:\Программы\C#\Share Class\Share Class\obj\Debug\Views\SignUpDialog.baml
+D:\Программы\C#\Share Class\Share Class\obj\Debug\Views\MainWindow.baml
+D:\Программы\C#\Share Class\Share Class\obj\Debug\Views\ClassRoom.g.cs
+D:\Программы\C#\Share Class\Share Class\obj\Debug\Views\HomeTask.g.cs
+D:\Программы\C#\Share Class\Share Class\obj\Debug\Views\ClassRoom.baml
+D:\Программы\C#\Share Class\Share Class\obj\Debug\Views\HomeTask.baml
