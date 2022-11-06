@@ -4,9 +4,58 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Share_Class.Views"
+        xmlns:vm="clr-namespace:Share_Class.ViewModels"
         mc:Ignorable="d"
-        Title="CreateClassDialog" Height="450" Width="800">
-    <Grid>
-        
-    </Grid>
+        Title="JoinClass" Height="450" Width="800" WindowStartupLocation="CenterScreen"
+        WindowStyle="None" AllowsTransparency="True" Background="Transparent">
+
+    <Window.DataContext>
+        <vm:CreateClassViewModel />
+    </Window.DataContext>
+
+    <WindowChrome.WindowChrome>
+        <WindowChrome CaptionHeight="30">
+
+        </WindowChrome>
+    </WindowChrome.WindowChrome>
+
+    <DockPanel x:Name="RootWindow" Background="{StaticResource MainColor}" Margin="7">
+
+        <DockPanel.Effect>
+            <DropShadowEffect x:Name="WindowDropShadowEffect" Opacity="0.5" ShadowDepth="4"></DropShadowEffect>
+        </DockPanel.Effect>
+
+        <DockPanel x:Name="TitleBar" DockPanel.Dock="Top" Background="{StaticResource HeaderColor}" Height="25">
+
+            <Button x:Name="CloseButton" Click="CloseButton_Click" DockPanel.Dock="Right" Width="15" Height="15" Margin="5,0,10,0" Background="Red" WindowChrome.IsHitTestVisibleInChrome="True" BorderThickness="0">
+                <Button.Resources>
+                    <Style TargetType="Border">
+                        <Setter Property="CornerRadius" Value="10"/>
+                    </Style>
+                </Button.Resources>
+            </Button>
+
+            <Button x:Name="MaxButton" Click="MaximizeButton_Click" DockPanel.Dock="Right" Width="15" Height="15" Margin="5,0,5,0" Background="Yellow" WindowChrome.IsHitTestVisibleInChrome="True" BorderThickness="0">
+                <Button.Resources>
+                    <Style TargetType="Border">
+                        <Setter Property="CornerRadius" Value="10"/>
+                    </Style>
+                </Button.Resources>
+            </Button>
+
+            <Button x:Name="MinButton" Click="MinimizeButton_Click" DockPanel.Dock="Right" Width="15" Height="15" Margin="5,0,5,0" Background="Green" WindowChrome.IsHitTestVisibleInChrome="True" BorderThickness="0">
+                <Button.Resources>
+                    <Style TargetType="Border">
+                        <Setter Property="CornerRadius" Value="10"/>
+                    </Style>
+                </Button.Resources>
+            </Button>
+
+            <TextBlock Margin="75,0,0,0" HorizontalAlignment="Center" FontSize="16" FontWeight="Bold">create class</TextBlock>
+        </DockPanel>
+
+        <ContentControl>
+
+        </ContentControl>
+    </DockPanel>
 </Window>

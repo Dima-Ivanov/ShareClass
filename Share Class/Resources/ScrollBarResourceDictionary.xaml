@@ -25,9 +25,11 @@
     <SolidColorBrush x:Key="HorizontalNormalBorderBrush"
                  Color="#888" />
     <SolidColorBrush x:Key="MainColor"
-                 Color="#17212B" />
-    <SolidColorBrush x:Key="SecondColor"
+                 Color="#0E1621" />
+    <SolidColorBrush x:Key="HeaderColor"
                  Color="#1F2936" />
+    <SolidColorBrush x:Key="SecondColor"
+                 Color="#17212B" />
     <SolidColorBrush x:Key="ButtonsColor"
                  Color="#6C7883" />
 

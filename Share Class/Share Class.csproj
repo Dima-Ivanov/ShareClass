@@ -94,6 +94,7 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="MVVM\DelegateCommand.cs" />
     <Compile Include="ViewModels\ClassRoomViewModel.cs" />
     <Compile Include="ViewModels\CreateClassViewModel.cs" />
     <Compile Include="ViewModels\HomeTaskViewModel.cs" />

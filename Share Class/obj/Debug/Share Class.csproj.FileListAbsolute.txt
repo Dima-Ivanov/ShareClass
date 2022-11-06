@@ -62,3 +62,4 @@ D:\Учеба\GitHub\Share Class\Share Class\obj\Debug\Share Class.csproj.Genera
 D:\Учеба\GitHub\Share Class\Share Class\obj\Debug\Share Class.csproj.CoreCompileInputs.cache
 D:\Учеба\GitHub\Share Class\Share Class\obj\Debug\Share Class.exe
 D:\Учеба\GitHub\Share Class\Share Class\obj\Debug\Share Class.pdb
+D:\Учеба\GitHub\Share Class\Share Class\obj\Debug\GeneratedInternalTypeHelper.g.cs

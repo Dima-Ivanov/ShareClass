@@ -4,41 +4,80 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Share_Class.Views"
+        xmlns:vm="clr-namespace:Share_Class.ViewModels"
         mc:Ignorable="d"
-        Title="LogInDialog" Height="250" Width="400" ShowInTaskbar="False" WindowStyle="None" AllowsTransparency="True" Background="Transparent"
-        WindowStartupLocation="CenterScreen" ResizeMode="NoResize">
-    <Border Background="{StaticResource MainColor}" BorderBrush="Black" BorderThickness="1" CornerRadius="5">
-        <Grid>
-            <Grid.RowDefinitions>
-                <RowDefinition></RowDefinition>
-                <RowDefinition></RowDefinition>
-                <RowDefinition></RowDefinition>
-                <RowDefinition></RowDefinition>
-            </Grid.RowDefinitions>
+        Title="LogIn" Height="450" Width="800" WindowStartupLocation="CenterScreen"
+        WindowStyle="None" AllowsTransparency="True" Background="Transparent" ShowInTaskbar="False">
 
-            <TextBlock Grid.Row="0" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="45">LogIn</TextBlock>
+    <Window.DataContext>
+        <vm:LogInViewModel />
+    </Window.DataContext>
 
-            <TextBlock Grid.Row="1" Margin="-230,0,0,0" Height="30" Width="100" FontSize="22">Login</TextBlock>
-            <Border CornerRadius="3" BorderThickness="1.5" BorderBrush="Black" Height="30" Width="200" Grid.Row="1">
-                <TextBox Width="190" Height="27" WindowChrome.IsHitTestVisibleInChrome="True" Background="{StaticResource MainColor}" BorderThickness="0" FontWeight="Bold" FontSize="20"></TextBox>
-            </Border>
+    <WindowChrome.WindowChrome>
+        <WindowChrome CaptionHeight="30">
 
-            <TextBlock Grid.Row="2" Margin="-240,0,0,0" Height="30" Width="150" FontSize="22">Password</TextBlock>
-            <Border CornerRadius="3" BorderThickness="1.5" BorderBrush="Black" Height="30" Width="200" Grid.Row="2">
-                <PasswordBox Width="190" Height="27" WindowChrome.IsHitTestVisibleInChrome="True" Background="{StaticResource MainColor}" BorderThickness="0" FontWeight="Bold" FontSize="20" PasswordChar="#"></PasswordBox>
-            </Border>
+        </WindowChrome>
+    </WindowChrome.WindowChrome>
 
-            <TextBlock Grid.Row="3" VerticalAlignment="Top" HorizontalAlignment="Center">Don't have an account?</TextBlock>
-            <Button Grid.Row="3" VerticalAlignment="Center" HorizontalAlignment="Center" Width="50" FontSize="18" Background="{StaticResource SecondColor}" x:Name="Ok_Button" Click="Ok_Button_Click">
-                Ok!
+    <DockPanel x:Name="RootWindow" Background="{StaticResource MainColor}" Margin="7">
+
+        <DockPanel.Effect>
+            <DropShadowEffect x:Name="WindowDropShadowEffect" Opacity="0.5" ShadowDepth="4"></DropShadowEffect>
+        </DockPanel.Effect>
+
+        <DockPanel x:Name="TitleBar" DockPanel.Dock="Top" Background="{StaticResource HeaderColor}" Height="25">
+
+            <Button x:Name="MaxButton" Click="MaximizeButton_Click" DockPanel.Dock="Right" Width="15" Height="15" Margin="5,0,5,0" Background="Yellow" WindowChrome.IsHitTestVisibleInChrome="True" BorderThickness="0">
                 <Button.Resources>
                     <Style TargetType="Border">
                         <Setter Property="CornerRadius" Value="10"/>
-                        <Setter Property="BorderBrush" Value="Black"/>
-                        <Setter Property="BorderThickness" Value="1"/>
                     </Style>
                 </Button.Resources>
             </Button>
-        </Grid>
-    </Border>
+
+            <Button x:Name="MinButton" Click="MinimizeButton_Click" DockPanel.Dock="Right" Width="15" Height="15" Margin="5,0,5,0" Background="Green" WindowChrome.IsHitTestVisibleInChrome="True" BorderThickness="0">
+                <Button.Resources>
+                    <Style TargetType="Border">
+                        <Setter Property="CornerRadius" Value="10"/>
+                    </Style>
+                </Button.Resources>
+            </Button>
+
+            <TextBlock Margin="50,0,0,0" HorizontalAlignment="Center" FontSize="16" FontWeight="Bold">log in</TextBlock>
+        </DockPanel>
+
+        <ContentControl>
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                </Grid.RowDefinitions>
+
+                <TextBlock Grid.Row="1" Margin="-230,0,0,0" Height="30" Width="100" FontSize="22">Login</TextBlock>
+                <Border CornerRadius="3" BorderThickness="1.5" BorderBrush="Black" Height="30" Width="200" Grid.Row="1">
+                    <TextBox Width="190" Height="27" WindowChrome.IsHitTestVisibleInChrome="True" Background="{StaticResource MainColor}" BorderThickness="0" FontWeight="Bold" FontSize="20"></TextBox>
+                </Border>
+
+                <TextBlock Grid.Row="2" Margin="-240,0,0,0" Height="30" Width="150" FontSize="22">Password</TextBlock>
+                <Border CornerRadius="3" BorderThickness="1.5" BorderBrush="Black" Height="30" Width="200" Grid.Row="2">
+                    <PasswordBox Width="190" Height="27" WindowChrome.IsHitTestVisibleInChrome="True" Background="{StaticResource MainColor}" BorderThickness="0" FontWeight="Bold" FontSize="20" PasswordChar="#"></PasswordBox>
+                </Border>
+
+                <TextBlock Grid.Row="3" VerticalAlignment="Top" HorizontalAlignment="Center">Don't have an account?</TextBlock>
+                <Button Grid.Row="3" VerticalAlignment="Center" HorizontalAlignment="Center" Width="50" FontSize="18" Background="{StaticResource HeaderColor}" x:Name="Ok_Button" Click="Ok_Button_Click">
+                    Ok!
+                    <Button.Resources>
+                        <Style TargetType="Border">
+                            <Setter Property="CornerRadius" Value="10"/>
+                            <Setter Property="BorderBrush" Value="Black"/>
+                            <Setter Property="BorderThickness" Value="1"/>
+                        </Style>
+                    </Button.Resources>
+                </Button>
+            </Grid>
+        </ContentControl>
+    </DockPanel>
+
 </Window>

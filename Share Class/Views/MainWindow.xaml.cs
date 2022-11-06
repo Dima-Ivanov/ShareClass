@@ -81,14 +81,5 @@ namespace Share_Class
 
             base.OnStateChanged(e);
         }
-
-        private void Window_Loaded(object sender, RoutedEventArgs e)
-        {
-            //LogInDialog logInDialog = new LogInDialog();
-
-            //logInDialog.ShowDialog();
-
-            
-        }
     }
 }

@@ -28,5 +28,52 @@ namespace Share_Class.Views
         {
             this.Close();
         }
+
+        /// <summary>
+        /// MaximizedButton_Clicked
+        /// </summary>
+        private void MaximizeButton_Click(object sender, RoutedEventArgs e)
+        {
+            AdjustWindowSize();
+        }
+
+        /// <summary>
+        /// Minimized Button_Clicked
+        /// </summary>
+        private void MinimizeButton_Click(object sender, RoutedEventArgs e)
+        {
+            this.WindowState = WindowState.Minimized;
+        }
+
+        /// <summary>
+        /// Adjusts the WindowSize to correct parameters when Maximize button is clicked
+        /// </summary>
+        private void AdjustWindowSize()
+        {
+            if (this.WindowState == WindowState.Maximized)
+            {
+                this.WindowState = WindowState.Normal;
+            }
+            else
+            {
+                this.WindowState = WindowState.Maximized;
+            }
+        }
+
+        protected override void OnStateChanged(EventArgs e)
+        {
+            this.MaxHeight = SystemParameters.WorkArea.Height + 14;
+
+            if (this.WindowState == WindowState.Maximized)
+            {
+                WindowDropShadowEffect.Opacity = 0;
+            }
+            else
+            {
+                WindowDropShadowEffect.Opacity = 0.5;
+            }
+
+            base.OnStateChanged(e);
+        }
     }
 }
