@@ -8,7 +8,7 @@
         mc:Ignorable="d"
         Title="Share Class" Height="720" Width="1410" WindowStartupLocation="CenterScreen"
         WindowStyle="None" AllowsTransparency="True" Background="Transparent">
-    
+
     <WindowChrome.WindowChrome>
         <WindowChrome CaptionHeight="30">
 
@@ -51,16 +51,173 @@
                 </Button.Resources>
             </Button>
 
-            <TextBlock Margin="10,0,0,0" FontFamily="Webdings" FontSize="25">L</TextBlock>
-            <Border CornerRadius="3" BorderThickness="1.5" BorderBrush="Black" Height="20" Width="200">
-                <TextBox Width="190" Height="17" WindowChrome.IsHitTestVisibleInChrome="True" Background="{StaticResource HeaderColor}" BorderThickness="0" FontWeight="Bold" FontSize="13"></TextBox>
-            </Border>
-
-            <TextBlock Margin="-155,0,0,0" HorizontalAlignment="Center" FontSize="16" FontWeight="Bold" x:Name="User_name">hometask</TextBlock>
+            <TextBlock Margin="75,0,0,0" HorizontalAlignment="Center" FontSize="16" FontWeight="Bold">hometask name</TextBlock>
         </DockPanel>
 
         <ContentControl>
-           
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                </Grid.RowDefinitions>
+
+                <Grid Grid.Row="0" Margin="50,10,50,0">
+                    <Grid.RowDefinitions>
+                        <RowDefinition></RowDefinition>
+                        <RowDefinition Height="60"></RowDefinition>
+                    </Grid.RowDefinitions>
+                    
+                    <ScrollViewer Grid.Row="0" HorizontalScrollBarVisibility="Disabled" VerticalScrollBarVisibility="Auto">
+                        <TextBlock FontSize="20" TextWrapping="Wrap" Foreground="{StaticResource FontColor}">
+                        description description description description description description description description description 
+                    description description description description description description description description description 
+                    description description description description description description description description description 
+                    description description description description description description description description description 
+                    description description description description description description description description description 
+                    description description description description description description description description description 
+                    description description description description description description description description description 
+                    description description description description description description description description description
+                    description description description description description description description description description
+                    description description description description description description description description description
+                        description description description description description description description description description
+                        description description description description description description description description description
+                        description description description description description description description description description
+                        description description description description description description description description description
+                        description description description description description description description description description
+                        description description description description description description description description description
+                        </TextBlock>
+                    </ScrollViewer>
+
+                    <ScrollViewer Grid.Row="1" HorizontalScrollBarVisibility="Disabled" VerticalScrollBarVisibility="Auto">
+                        <WrapPanel Orientation="Horizontal">
+
+                            <Border Margin="10,10,0,10" Height="40" BorderBrush="Black" BorderThickness="1" CornerRadius="5">
+                                <TextBlock Foreground="{StaticResource ButtonsColor}" FontSize="20" VerticalAlignment="Center" Margin="20,0,20,0" TextTrimming="CharacterEllipsis" HorizontalAlignment="Left">filename</TextBlock>
+                            </Border>
+                            <Border Margin="10,10,0,10" Height="40" BorderBrush="Black" BorderThickness="1" CornerRadius="5">
+                                <TextBlock Foreground="{StaticResource ButtonsColor}" FontSize="20" VerticalAlignment="Center" Margin="20,0,20,0" TextTrimming="CharacterEllipsis" HorizontalAlignment="Left">filename</TextBlock>
+                            </Border>
+                            
+                        </WrapPanel>
+                    </ScrollViewer>
+                </Grid>
+
+                <ScrollViewer Grid.Row="1" Margin="50,10,50,0" HorizontalScrollBarVisibility="Disabled" VerticalScrollBarVisibility="Auto">
+                    <WrapPanel Orientation="Vertical" x:Name="Wrap">
+
+                        <Border Margin="0,10,0,10" BorderBrush="Black" BorderThickness="1" CornerRadius="5" Height="180" Width="{Binding ElementName=Wrap, Path=ActualWidth}">
+                            
+                            <Grid>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition></RowDefinition>
+                                    <RowDefinition Height="60"></RowDefinition>
+                                    <RowDefinition Height="40"></RowDefinition>
+                                </Grid.RowDefinitions>
+                                
+                                <ScrollViewer Grid.Row="0" Margin="10" HorizontalScrollBarVisibility="Disabled" VerticalScrollBarVisibility="Auto" MaxHeight="55" VerticalAlignment="Top">
+                                    <TextBlock FontSize="20" TextWrapping="Wrap" Foreground="{StaticResource FontColor}">
+                                        description description fakmfpklaspodsapmdpsampdasmpdas fmpalfpolsapmdpasdposadpsampodpoaspdoas ffffffffffffffffffff f f dmpoasmopdasopdopasmopdasmdpoasdmopa dasmpdas
+                                    </TextBlock>
+                                </ScrollViewer>
+
+                                <ScrollViewer Grid.Row="1" HorizontalScrollBarVisibility="Disabled" VerticalScrollBarVisibility="Auto">
+                                    <WrapPanel Orientation="Horizontal">
+
+                                        <Border Margin="10,10,0,10" Height="40" BorderBrush="Black" BorderThickness="1" CornerRadius="5">
+                                            <TextBlock Foreground="{StaticResource ButtonsColor}" FontSize="20" VerticalAlignment="Center" Margin="20,0,20,0" TextTrimming="CharacterEllipsis" HorizontalAlignment="Left">filename</TextBlock>
+                                        </Border>
+                                        <Border Margin="10,10,0,10" Height="40" BorderBrush="Black" BorderThickness="1" CornerRadius="5">
+                                            <TextBlock Foreground="{StaticResource ButtonsColor}" FontSize="20" VerticalAlignment="Center" Margin="20,0,20,0" TextTrimming="CharacterEllipsis" HorizontalAlignment="Left">filename</TextBlock>
+                                        </Border>
+
+                                    </WrapPanel>
+                                </ScrollViewer>
+
+                                <Grid Grid.Row="2">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition></ColumnDefinition>
+                                        <ColumnDefinition></ColumnDefinition>
+                                    </Grid.ColumnDefinitions>
+                                    
+                                    <TextBlock Foreground="{StaticResource FontColor}" Grid.Column="0" FontSize="20" VerticalAlignment="Bottom" MaxWidth="300" Margin="10" TextTrimming="CharacterEllipsis" HorizontalAlignment="Left">student name</TextBlock>
+
+                                    <Grid Grid.Column="1">
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition></ColumnDefinition>
+                                            <ColumnDefinition></ColumnDefinition>
+                                        </Grid.ColumnDefinitions>
+
+                                        <TextBlock FontSize="20" Margin="0,0,20,0" HorizontalAlignment="Right" Foreground="{StaticResource FontColor}" Grid.Column="0">1</TextBlock>
+                                        <TextBlock FontSize="20" Margin="0,0,20,0" HorizontalAlignment="Right" Foreground="{StaticResource FontColor}" Grid.Column="1">2</TextBlock>
+                                    </Grid>
+                                </Grid>
+                            </Grid>
+                        </Border>
+
+                    </WrapPanel>
+                </ScrollViewer>
+
+                <Grid Grid.Row="2" Margin="50,10,50,0">
+
+                    <Grid.RowDefinitions>
+                        <RowDefinition></RowDefinition>
+                        <RowDefinition Height="70"></RowDefinition>
+                    </Grid.RowDefinitions>
+
+                    <Border CornerRadius="3" BorderThickness="1.5" BorderBrush="Black" Grid.Row="0">
+                        <TextBox Margin="5,0,5,0" BorderThickness="0" FontSize="19" TextWrapping="Wrap" Foreground="{StaticResource FontColor}"
+                                 ScrollViewer.HorizontalScrollBarVisibility="Disabled" ScrollViewer.VerticalScrollBarVisibility="Auto">
+
+                            <TextBox.Style>
+                                <Style TargetType="TextBox" xmlns:sys="clr-namespace:System;assembly=mscorlib">
+                                    <Style.Triggers>
+                                        <Trigger Property="IsKeyboardFocused" Value="False">
+                                            <Setter Property="Background" Value="Transparent" />
+                                        </Trigger>
+                                        <Trigger Property="Text" Value="{x:Static sys:String.Empty}">
+                                            <Setter Property="Background" Value="{StaticResource DescriptionBrush}" />
+                                        </Trigger>
+                                        <Trigger Property="IsKeyboardFocused" Value="True">
+                                            <Setter Property="Background" Value="Transparent" />
+                                        </Trigger>
+                                    </Style.Triggers>
+                                </Style>
+                            </TextBox.Style>
+
+                        </TextBox>
+                    </Border>
+
+                    <Grid Grid.Row="1">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition></ColumnDefinition>
+                            <ColumnDefinition Width="200"></ColumnDefinition>
+                        </Grid.ColumnDefinitions>
+
+                        <Button Background="{StaticResource ButtonsColor}" FontSize="15" BorderBrush="Black" Width="100" Height="30" Grid.Column="0" HorizontalAlignment="Left" Margin="40,0,0,0">
+                            Upload files
+                            <Button.Resources>
+                                <Style TargetType="Border">
+                                    <Setter Property="CornerRadius" Value="8"/>
+                                </Style>
+                            </Button.Resources>
+                        </Button>
+
+                        <TextBlock Grid.Column="0" HorizontalAlignment="Left" Margin="160,0,0,0" Height="30" FontSize="19">
+                            
+                        </TextBlock>
+
+                        <Button Background="{StaticResource ButtonsColor}" FontSize="15" BorderBrush="Black" Width="100" Height="30" Grid.Column="1" HorizontalAlignment="Right" Margin="0,0,40,0">
+                            Submit!
+                            <Button.Resources>
+                                <Style TargetType="Border">
+                                    <Setter Property="CornerRadius" Value="8"/>
+                                </Style>
+                            </Button.Resources>
+                        </Button>
+                    </Grid>
+                </Grid>
+            </Grid>
         </ContentControl>
     </DockPanel>
 </Window>

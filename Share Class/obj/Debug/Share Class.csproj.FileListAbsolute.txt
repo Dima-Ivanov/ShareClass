@@ -63,3 +63,10 @@ D:\Учеба\GitHub\Share Class\Share Class\obj\Debug\Share Class.csproj.CoreCo
 D:\Учеба\GitHub\Share Class\Share Class\obj\Debug\Share Class.exe
 D:\Учеба\GitHub\Share Class\Share Class\obj\Debug\Share Class.pdb
 D:\Учеба\GitHub\Share Class\Share Class\obj\Debug\GeneratedInternalTypeHelper.g.cs
+D:\Учеба\GitHub\Share Class\Share Class\bin\Debug\Prism.dll
+D:\Учеба\GitHub\Share Class\Share Class\bin\Debug\Prism.pdb
+D:\Учеба\GitHub\Share Class\Share Class\bin\Debug\Prism.xml
+D:\Учеба\GitHub\Share Class\Share Class\obj\Debug\Share Class.csproj.CopyComplete
+D:\Учеба\GitHub\Share Class\Share Class\bin\Debug\Microsoft.Xaml.Behaviors.dll
+D:\Учеба\GitHub\Share Class\Share Class\bin\Debug\Microsoft.Xaml.Behaviors.pdb
+D:\Учеба\GitHub\Share Class\Share Class\bin\Debug\Microsoft.Xaml.Behaviors.xml

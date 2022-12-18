@@ -55,7 +55,66 @@
         </DockPanel>
 
         <ContentControl>
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                </Grid.RowDefinitions>
 
+                <TextBlock Foreground="{StaticResource FontColor}" FontWeight="Bold" Grid.Row="0" Height="30" FontSize="25" 
+                           Margin="50,0,50,0" VerticalAlignment="Center" HorizontalAlignment="Center">ClassName</TextBlock>
+
+                <ScrollViewer Grid.Row="1" HorizontalScrollBarVisibility="Disabled" VerticalScrollBarVisibility="Auto" Margin="20,0,20,0">
+                    <TextBlock FontSize="20" TextWrapping="Wrap" Foreground="{StaticResource FontColor}">
+                        description description description description description description description description description 
+                    description description description description description description description description description 
+                    description description description description description description description description description 
+                    description description description description description description description description description 
+                    description description description description description description description description description 
+                    description description description description description description description description description 
+                    </TextBlock>
+                </ScrollViewer>
+
+                <Grid Grid.Row="2">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition></ColumnDefinition>
+                        <ColumnDefinition></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+
+                    <TextBlock Grid.Column="0" FontSize="18" Foreground="{StaticResource FontColor}" Margin="40,20,0,0" MaxWidth="200" HorizontalAlignment="Left"
+                               VerticalAlignment="Top" TextTrimming="CharacterEllipsis">TeacherName</TextBlock>
+
+                    <TextBlock Grid.Column="1" FontSize="18" Foreground="{StaticResource FontColor}" Margin="0,20,40,0" MaxWidth="200" HorizontalAlignment="Right"
+                               VerticalAlignment="Top" TextTrimming="CharacterEllipsis">UserCount</TextBlock>
+                </Grid>
+
+                <Grid Grid.Row="3">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition></ColumnDefinition>
+                        <ColumnDefinition></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+
+                    <Button Background="{StaticResource CloseButtonColor}" FontSize="15" BorderBrush="Black" Width="100" Height="30" Grid.Column="0" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="120,20,0,0">
+                        Close
+                        <Button.Resources>
+                            <Style TargetType="Border">
+                                <Setter Property="CornerRadius" Value="8"/>
+                            </Style>
+                        </Button.Resources>
+                    </Button>
+
+                    <Button Background="{StaticResource ButtonsColor}" FontSize="15" BorderBrush="Black" Width="100" Height="30" Grid.Column="1" VerticalAlignment="Top" HorizontalAlignment="Right" Margin="0,20,120,0">
+                        Join!
+                        <Button.Resources>
+                            <Style TargetType="Border">
+                                <Setter Property="CornerRadius" Value="8"/>
+                            </Style>
+                        </Button.Resources>
+                    </Button>
+                </Grid>
+            </Grid>
         </ContentControl>
     </DockPanel>
 </Window>

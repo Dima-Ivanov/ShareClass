@@ -55,7 +55,91 @@
         </DockPanel>
 
         <ContentControl>
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition Height="120"></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                </Grid.RowDefinitions>
 
+                <Border CornerRadius="3" BorderThickness="1.5" BorderBrush="Black" Height="30" Margin="50,0,50,0" Grid.Row="0">
+                    <TextBox Foreground="{StaticResource FontColor}" FontWeight="Bold" Margin="5,0,5,0" Height="27" BorderThickness="0" FontSize="19">
+
+                        <TextBox.Style>
+                            <Style TargetType="TextBox" xmlns:sys="clr-namespace:System;assembly=mscorlib">
+                                <Style.Triggers>
+                                    <Trigger Property="IsKeyboardFocused" Value="False">
+                                        <Setter Property="Background" Value="Transparent" />
+                                    </Trigger>
+                                    <Trigger Property="Text" Value="{x:Static sys:String.Empty}">
+                                        <Setter Property="Background" Value="{StaticResource ClassNameBrush}" />
+                                    </Trigger>
+                                    <Trigger Property="IsKeyboardFocused" Value="True">
+                                        <Setter Property="Background" Value="Transparent" />
+                                    </Trigger>
+                                </Style.Triggers>
+                            </Style>
+                        </TextBox.Style>
+
+                    </TextBox>
+                </Border>
+
+                <Border CornerRadius="3" BorderThickness="1.5" BorderBrush="Black" Height="120" Margin="50,0,50,0" Grid.Row="1">
+                    <TextBox Foreground="{StaticResource FontColor}" Margin="5,0,5,0" Height="117" BorderThickness="0" FontSize="19" TextWrapping="Wrap"
+                             ScrollViewer.HorizontalScrollBarVisibility="Disabled" ScrollViewer.VerticalScrollBarVisibility="Auto">
+
+                        <TextBox.Style>
+                            <Style TargetType="TextBox" xmlns:sys="clr-namespace:System;assembly=mscorlib">
+                                <Style.Triggers>
+                                    <Trigger Property="IsKeyboardFocused" Value="False">
+                                        <Setter Property="Background" Value="Transparent" />
+                                    </Trigger>
+                                    <Trigger Property="Text" Value="{x:Static sys:String.Empty}">
+                                        <Setter Property="Background" Value="{StaticResource DescriptionBrush}" />
+                                    </Trigger>
+                                    <Trigger Property="IsKeyboardFocused" Value="True">
+                                        <Setter Property="Background" Value="Transparent" />
+                                    </Trigger>
+                                </Style.Triggers>
+                            </Style>
+                        </TextBox.Style>
+
+                    </TextBox>
+                </Border>
+
+                <Border CornerRadius="3" BorderThickness="1.5" BorderBrush="Black" Height="30" Margin="50,0,50,0" Grid.Row="2">
+                    <TextBox Foreground="{StaticResource FontColor}" Margin="5,0,5,0" Height="27" BorderThickness="0" FontSize="19">
+
+                        <TextBox.Style>
+                            <Style TargetType="TextBox" xmlns:sys="clr-namespace:System;assembly=mscorlib">
+                                <Style.Triggers>
+                                    <Trigger Property="IsKeyboardFocused" Value="False">
+                                        <Setter Property="Background" Value="Transparent" />
+                                    </Trigger>
+                                    <Trigger Property="Text" Value="{x:Static sys:String.Empty}">
+                                        <Setter Property="Background" Value="{StaticResource TeacherNameBrush}" />
+                                    </Trigger>
+                                    <Trigger Property="IsKeyboardFocused" Value="True">
+                                        <Setter Property="Background" Value="Transparent" />
+                                    </Trigger>
+                                </Style.Triggers>
+                            </Style>
+                        </TextBox.Style>
+
+                    </TextBox>
+                </Border>
+
+                <Button Grid.Row="4" Background="{StaticResource ButtonsColor}" FontSize="15" BorderBrush="Black" Width="100" Margin="0,0,0,40" Height="30" Grid.Column="1"
+                        VerticalAlignment="Center" HorizontalAlignment="Center">
+                    Create!
+                    <Button.Resources>
+                        <Style TargetType="Border">
+                            <Setter Property="CornerRadius" Value="8"/>
+                        </Style>
+                    </Button.Resources>
+                </Button>
+            </Grid>
         </ContentControl>
     </DockPanel>
 </Window>

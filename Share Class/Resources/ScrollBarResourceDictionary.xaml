@@ -31,7 +31,59 @@
     <SolidColorBrush x:Key="SecondColor"
                  Color="#17212B" />
     <SolidColorBrush x:Key="ButtonsColor"
-                 Color="#6C7883" />
+                 Color="#2F6EA5" />
+    <SolidColorBrush x:Key="CloseButtonColor"
+                     Color="#F06964" />
+    <SolidColorBrush x:Key="FontColor"
+                 Color="#F5F5F5" />
+
+    <VisualBrush x:Key="InputClassRoomCodeBrush" AlignmentX="Left" AlignmentY="Center" Stretch="None">
+        <VisualBrush.Visual>
+            <Label Content="Input invitation code here" FontSize="19" Foreground="LightGray" Background="Transparent"/>
+        </VisualBrush.Visual>
+    </VisualBrush>
+
+    <VisualBrush x:Key="DescriptionBrush" AlignmentX="Left" AlignmentY="Center" Stretch="None">
+        <VisualBrush.Visual>
+            <Label Content="Description" FontSize="19" Foreground="LightGray" Background="Transparent"/>
+        </VisualBrush.Visual>
+    </VisualBrush>
+
+    <VisualBrush x:Key="SearchBrush" AlignmentX="Left" AlignmentY="Center" Stretch="None">
+        <VisualBrush.Visual>
+            <Label Content="Search" FontSize="19" Foreground="LightGray" Background="Transparent"/>
+        </VisualBrush.Visual>
+    </VisualBrush>
+
+    <VisualBrush x:Key="PasswordBrush" AlignmentX="Left" AlignmentY="Center" Stretch="None">
+        <VisualBrush.Visual>
+            <Label Content="Password" FontSize="19" Foreground="LightGray" Background="Transparent"/>
+        </VisualBrush.Visual>
+    </VisualBrush>
+
+    <VisualBrush x:Key="LoginBrush" AlignmentX="Left" AlignmentY="Center" Stretch="None">
+        <VisualBrush.Visual>
+            <Label Content="Login" FontSize="19" Foreground="LightGray" Background="Transparent"/>
+        </VisualBrush.Visual>
+    </VisualBrush>
+
+    <VisualBrush x:Key="NameBrush" AlignmentX="Left" AlignmentY="Center" Stretch="None">
+        <VisualBrush.Visual>
+            <Label Content="Name" FontSize="19" Foreground="LightGray" Background="Transparent"/>
+        </VisualBrush.Visual>
+    </VisualBrush>
+
+    <VisualBrush x:Key="ClassNameBrush" AlignmentX="Left" AlignmentY="Center" Stretch="None">
+        <VisualBrush.Visual>
+            <Label Content="ClassRoom Name" FontSize="19" Foreground="LightGray" Background="Transparent"/>
+        </VisualBrush.Visual>
+    </VisualBrush>
+
+    <VisualBrush x:Key="TeacherNameBrush" AlignmentX="Left" AlignmentY="Center" Stretch="None">
+        <VisualBrush.Visual>
+            <Label Content="Teacher Name?" FontSize="19" Foreground="LightGray" Background="Transparent"/>
+        </VisualBrush.Visual>
+    </VisualBrush>
 
     <Style x:Key="ScrollBarLineButton"
        TargetType="{x:Type RepeatButton}">

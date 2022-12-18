@@ -51,16 +51,103 @@
                 </Button.Resources>
             </Button>
 
-            <TextBlock Margin="10,0,0,0" FontFamily="Webdings" FontSize="25">L</TextBlock>
-            <Border CornerRadius="3" BorderThickness="1.5" BorderBrush="Black" Height="20" Width="200">
-                <TextBox Width="190" Height="17" WindowChrome.IsHitTestVisibleInChrome="True" Background="{StaticResource HeaderColor}" BorderThickness="0" FontWeight="Bold" FontSize="13"></TextBox>
-            </Border>
-
-            <TextBlock Margin="-155,0,0,0" HorizontalAlignment="Center" FontSize="16" FontWeight="Bold">classroom</TextBlock>
+            <TextBlock Margin="75,0,0,0" HorizontalAlignment="Center" FontSize="16" FontWeight="Bold" x:Name="User_name" Text="classroom"></TextBlock>
         </DockPanel>
 
         <ContentControl>
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="350"></ColumnDefinition>
+                    <ColumnDefinition></ColumnDefinition>
+                </Grid.ColumnDefinitions>
 
+                <ScrollViewer Grid.Column="0" HorizontalScrollBarVisibility="Disabled" VerticalScrollBarVisibility="Auto">
+                    <WrapPanel>
+                        <Border Margin="20,20,0,20" Width="300" Height="120" BorderBrush="Black" BorderThickness="1" CornerRadius="5">
+                            <Grid>
+                                <TextBlock Foreground="{StaticResource FontColor}" Margin="20" FontSize="25" MaxWidth="250" Height="30" VerticalAlignment="Top" HorizontalAlignment="Center" TextTrimming="CharacterEllipsis">User Name</TextBlock>
+                                <TextBlock Foreground="{StaticResource FontColor}" FontSize="20" VerticalAlignment="Bottom" Margin="20,10,10,10" MaxWidth="200" TextTrimming="CharacterEllipsis" HorizontalAlignment="Center">User Score</TextBlock>
+                            </Grid>
+                        </Border>
+                        <Border Margin="20,20,0,20" Width="300" Height="120" BorderBrush="Black" BorderThickness="1" CornerRadius="5"></Border>
+                        <Border Margin="20,20,0,20" Width="300" Height="120" BorderBrush="Black" BorderThickness="1" CornerRadius="5"></Border>
+                        <Border Margin="20,20,0,20" Width="300" Height="120" BorderBrush="Black" BorderThickness="1" CornerRadius="5"></Border>
+                        <Border Margin="20,20,0,20" Width="300" Height="120" BorderBrush="Black" BorderThickness="1" CornerRadius="5"></Border>
+                        <Border Margin="20,20,0,20" Width="300" Height="120" BorderBrush="Black" BorderThickness="1" CornerRadius="5"></Border>
+                    </WrapPanel>
+                </ScrollViewer>
+
+                <Border Grid.Column="0" Width="1" BorderThickness="1" BorderBrush="Black" HorizontalAlignment="Right"></Border>
+
+                <ScrollViewer Grid.Column="1" HorizontalScrollBarVisibility="Disabled" VerticalScrollBarVisibility="Auto">
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition></RowDefinition>
+                            <RowDefinition></RowDefinition>
+                        </Grid.RowDefinitions>
+
+                        <Border CornerRadius="3" BorderThickness="1.5" BorderBrush="Black" Height="30" Margin="100,10,100,0" Grid.Row="0">
+                            <TextBox Margin="1,0,1,0" Height="27" BorderThickness="0" FontWeight="Bold" FontSize="19">
+
+                                <TextBox.Style>
+                                    <Style TargetType="TextBox" xmlns:sys="clr-namespace:System;assembly=mscorlib">
+                                        <Style.Triggers>
+                                            <Trigger Property="IsKeyboardFocused" Value="False">
+                                                <Setter Property="Background" Value="Transparent" />
+                                            </Trigger>
+                                            <Trigger Property="Text" Value="{x:Static sys:String.Empty}">
+                                                <Setter Property="Background" Value="{StaticResource SearchBrush}" />
+                                            </Trigger>
+                                            <Trigger Property="IsKeyboardFocused" Value="True">
+                                                <Setter Property="Background" Value="Transparent" />
+                                            </Trigger>
+                                        </Style.Triggers>
+                                    </Style>
+                                </TextBox.Style>
+
+                            </TextBox>
+                        </Border>
+
+                        <WrapPanel Grid.Row="1">
+                            <Border Margin="20,20,0,20" Width="300" Height="120" BorderBrush="Black" BorderThickness="1" CornerRadius="5">
+                                <Grid>
+                                    <TextBlock Foreground="{StaticResource FontColor}" Margin="20" FontSize="25" MaxWidth="250" Height="30" VerticalAlignment="Top" HorizontalAlignment="Center" TextTrimming="CharacterEllipsis">Hometask Name</TextBlock>
+                                    <TextBlock Foreground="{StaticResource FontColor}" FontSize="20" VerticalAlignment="Bottom" Margin="20,10,20,10" MaxWidth="260" TextTrimming="CharacterEllipsis" HorizontalAlignment="Left">deadline date</TextBlock>
+                                </Grid>
+                            </Border>
+                            <Border Margin="20,20,0,20" Width="300" Height="120" BorderBrush="Black" BorderThickness="1" CornerRadius="5"></Border>
+                            <Border Margin="20,20,0,20" Width="300" Height="120" BorderBrush="Black" BorderThickness="1" CornerRadius="5"></Border>
+                            <Border Margin="20,20,0,20" Width="300" Height="120" BorderBrush="Black" BorderThickness="1" CornerRadius="5"></Border>
+                            <Border Margin="20,20,0,20" Width="300" Height="120" BorderBrush="Black" BorderThickness="1" CornerRadius="5"></Border>
+                            <Border Margin="20,20,0,20" Width="300" Height="120" BorderBrush="Black" BorderThickness="1" CornerRadius="5"></Border>
+                            <Border Margin="20,20,0,20" Width="300" Height="120" BorderBrush="Black" BorderThickness="1" CornerRadius="5"></Border>
+                            <Border Margin="20,20,0,20" Width="300" Height="120" BorderBrush="Black" BorderThickness="1" CornerRadius="5"></Border>
+                            <Border Margin="20,20,0,20" Width="300" Height="120" BorderBrush="Black" BorderThickness="1" CornerRadius="5"></Border>
+                            <Border Margin="20,20,0,20" Width="300" Height="120" BorderBrush="Black" BorderThickness="1" CornerRadius="5"></Border>
+                            <Border Margin="20,20,0,20" Width="300" Height="120" BorderBrush="Black" BorderThickness="1" CornerRadius="5"></Border>
+                            <Border Margin="20,20,0,20" Width="300" Height="120" BorderBrush="Black" BorderThickness="1" CornerRadius="5"></Border>
+                            <Border Margin="20,20,0,20" Width="300" Height="120" BorderBrush="Black" BorderThickness="1" CornerRadius="5"></Border>
+                        </WrapPanel>
+                    </Grid>
+                </ScrollViewer>
+
+                <Button BorderBrush="Black" Grid.Column="1" Width="50" Height="50" VerticalAlignment="Bottom" HorizontalAlignment="Right" Margin="0,0,20,10" FontSize="45" FontWeight="Black" Padding="0,-12,0,0" Background="{StaticResource ButtonsColor}">
+                    +
+                    <Button.Resources>
+                        <Style TargetType="Border">
+                            <Setter Property="CornerRadius" Value="25"/>
+                        </Style>
+                    </Button.Resources>
+                </Button>
+
+                <!--<CheckBox Grid.Column="1" Width="50" Height="50" VerticalAlignment="Bottom" HorizontalAlignment="Right">
+                    <i:Interaction.Triggers>
+                        <i:EventTrigger EventName="Checked">
+                            <i:InvokeCommandAction Command="{Binding delegateCommand}" PassEventArgsToCommand="True"/>
+                        </i:EventTrigger>
+                    </i:Interaction.Triggers>
+                </CheckBox>-->
+            </Grid>
         </ContentControl>
     </DockPanel>
 </Window>
