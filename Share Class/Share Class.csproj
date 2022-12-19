@@ -103,6 +103,9 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="INotifyModels\ClassRoomIModel.cs" />
+    <Compile Include="INotifyModels\HomeTaskIModel.cs" />
+    <Compile Include="MVVM\INotifyBase.cs" />
     <Compile Include="ViewModels\ClassRoomViewModel.cs" />
     <Compile Include="ViewModels\CreateClassViewModel.cs" />
     <Compile Include="ViewModels\HomeTaskViewModel.cs" />
@@ -176,6 +179,12 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Behaviors\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\BusinessLogicLayer\BusinessLogicLayer.csproj">
+      <Project>{bdeca494-a2eb-45e1-abd7-26c7d1aed07e}</Project>
+      <Name>BusinessLogicLayer</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

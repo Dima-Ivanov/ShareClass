@@ -70,3 +70,11 @@ D:\Учеба\GitHub\Share Class\Share Class\obj\Debug\Share Class.csproj.CopyCo
 D:\Учеба\GitHub\Share Class\Share Class\bin\Debug\Microsoft.Xaml.Behaviors.dll
 D:\Учеба\GitHub\Share Class\Share Class\bin\Debug\Microsoft.Xaml.Behaviors.pdb
 D:\Учеба\GitHub\Share Class\Share Class\bin\Debug\Microsoft.Xaml.Behaviors.xml
+D:\Учеба\GitHub\Share Class\Share Class\bin\Debug\BusinessLogicLayer.exe
+D:\Учеба\GitHub\Share Class\Share Class\bin\Debug\BusinessLogicLayer.pdb
+D:\Учеба\GitHub\Share Class\Share Class\bin\Debug\BusinessLogicLayer.exe.config
+D:\Учеба\GitHub\Share Class\Share Class\bin\Debug\DataAccessLayer.exe
+D:\Учеба\GitHub\Share Class\Share Class\bin\Debug\EntityFramework.dll
+D:\Учеба\GitHub\Share Class\Share Class\bin\Debug\DataAccessLayer.pdb
+D:\Учеба\GitHub\Share Class\Share Class\bin\Debug\DataAccessLayer.exe.config
+D:\Учеба\GitHub\Share Class\Share Class\bin\Debug\EntityFramework.xml

@@ -51,7 +51,7 @@
                 </Button.Resources>
             </Button>
 
-            <TextBlock Margin="75,0,0,0" HorizontalAlignment="Center" FontSize="16" FontWeight="Bold" x:Name="User_name" Text="classroom"></TextBlock>
+            <TextBlock Margin="75,0,0,0" HorizontalAlignment="Center" FontSize="16" FontWeight="Bold" x:Name="User_name" Text="{Binding Name}"></TextBlock>
         </DockPanel>
 
         <ContentControl>

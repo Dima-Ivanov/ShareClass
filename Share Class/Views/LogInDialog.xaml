@@ -5,6 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Share_Class.Views"
         xmlns:vm="clr-namespace:Share_Class.ViewModels"
+        xmlns:i="http://schemas.microsoft.com/xaml/behaviors"
         mc:Ignorable="d"
         Title="LogIn" Height="450" Width="800" WindowStartupLocation="CenterScreen"
         WindowStyle="None" AllowsTransparency="True" Background="Transparent" ShowInTaskbar="False">
@@ -56,7 +57,8 @@
                 </Grid.RowDefinitions>
 
                 <Border CornerRadius="3" BorderThickness="1.5" BorderBrush="Black" Height="30" Margin="50,0,50,0" Grid.Row="1">
-                    <TextBox Foreground="{StaticResource FontColor}" Margin="5,0,5,0" Height="27" BorderThickness="0" FontSize="19">
+                    <TextBox Foreground="{StaticResource FontColor}" Margin="5,0,5,0" Height="27" BorderThickness="0" FontSize="19"
+                             Text="{Binding Login, Mode=TwoWay}">
 
                         <TextBox.Style>
                             <Style TargetType="TextBox" xmlns:sys="clr-namespace:System;assembly=mscorlib">
@@ -78,10 +80,36 @@
                 </Border>
 
                 <Border CornerRadius="3" BorderThickness="1.5" BorderBrush="Black" Height="30" Margin="50,0,50,0" Grid.Row="2">
-                    <PasswordBox Foreground="{StaticResource FontColor}" Margin="5,0,5,0" Height="27" Background="Transparent" BorderThickness="0" FontSize="19" PasswordChar="#"></PasswordBox>
+                    <TextBox Foreground="{StaticResource FontColor}" Margin="5,0,5,0" Height="27" BorderThickness="0" FontSize="19"
+                                 Text="{Binding Password, Mode=TwoWay}">
+                        
+                        <TextBox.Style>
+                            <Style TargetType="TextBox" xmlns:sys="clr-namespace:System;assembly=mscorlib">
+                                <Style.Triggers>
+                                    <Trigger Property="IsKeyboardFocused" Value="False">
+                                        <Setter Property="Background" Value="Transparent" />
+                                    </Trigger>
+                                    <Trigger Property="Text" Value="{x:Static sys:String.Empty}">
+                                        <Setter Property="Background" Value="{StaticResource PasswordBrush}" />
+                                    </Trigger>
+                                    <Trigger Property="IsKeyboardFocused" Value="True">
+                                        <Setter Property="Background" Value="Transparent" />
+                                    </Trigger>
+                                </Style.Triggers>
+                            </Style>
+                        </TextBox.Style>
+                    </TextBox>
                 </Border>
 
-                <TextBlock Foreground="{StaticResource ButtonsColor}" Grid.Row="3" VerticalAlignment="Top" HorizontalAlignment="Center">Don't have an account?</TextBlock>
+                <TextBlock Foreground="{StaticResource ButtonsColor}" Grid.Row="3" VerticalAlignment="Top" HorizontalAlignment="Center">
+                    Don't have an account?
+                    
+                    <i:Interaction.Triggers>
+                        <i:EventTrigger EventName="MouseLeftButtonDown">
+                            <i:InvokeCommandAction Command="{Binding SignUpHintCommand}"/>
+                        </i:EventTrigger>
+                    </i:Interaction.Triggers>
+                </TextBlock>
 
                 <Button Grid.Row="3" Background="{StaticResource ButtonsColor}" FontSize="15" BorderBrush="Black" Width="100" Height="30" Grid.Column="1" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="0,40,0,0">
                     LogIn!
@@ -90,6 +118,12 @@
                             <Setter Property="CornerRadius" Value="8"/>
                         </Style>
                     </Button.Resources>
+
+                    <i:Interaction.Triggers>
+                        <i:EventTrigger EventName="Click">
+                            <i:InvokeCommandAction Command="{Binding LogInCommand}"/>
+                        </i:EventTrigger>
+                    </i:Interaction.Triggers>
                 </Button>
             </Grid>
         </ContentControl>

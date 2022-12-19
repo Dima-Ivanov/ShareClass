@@ -61,15 +61,15 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Models\ClassRoom.cs" />
-    <Compile Include="Models\ClassRoomsUsers.cs" />
-    <Compile Include="Models\HomeTask.cs" />
-    <Compile Include="Models\HomeTask_File.cs" />
-    <Compile Include="Models\Reaction.cs" />
-    <Compile Include="Models\ReactionType.cs" />
-    <Compile Include="Models\Solution.cs" />
-    <Compile Include="Models\Solution_File.cs" />
-    <Compile Include="Models\User.cs" />
+    <Compile Include="Models\ClassRoomModel.cs" />
+    <Compile Include="Models\ClassRoomsUsersModel.cs" />
+    <Compile Include="Models\HomeTaskModel.cs" />
+    <Compile Include="Models\HomeTask_FileModel.cs" />
+    <Compile Include="Models\ReactionModel.cs" />
+    <Compile Include="Models\ReactionTypeModel.cs" />
+    <Compile Include="Models\SolutionModel.cs" />
+    <Compile Include="Models\Solution_FileModel.cs" />
+    <Compile Include="Models\UserModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -95,6 +95,11 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\DataAccessLayer\DataAccessLayer.csproj">
+      <Project>{99db598b-ccb4-4898-9703-c24d10b1a2d5}</Project>
+      <Name>DataAccessLayer</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

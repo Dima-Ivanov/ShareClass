@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace BusinessLogicLayer.Models
 {
-    public class User
+    public class SolutionModel
     {
     }
 }
