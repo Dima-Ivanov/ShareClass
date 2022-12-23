@@ -6,12 +6,14 @@ using System.Text;
 using System.Threading.Tasks;
 using BusinessLogicLayer.Models;
 using Prism.Commands;
+using Share_Class.Views;
+using Share_Class.ViewModels;
 
 namespace Share_Class.INotifyModels
 {
-    public class HomeTaskIModel : INotifyBase
+    public class HomeTaskNotifyModel : INotifyBase
     {
-        public HomeTaskIModel(HomeTaskModel homeTaskModel)
+        public HomeTaskNotifyModel(HomeTaskModel homeTaskModel)
         {
             OpenHomeTaskCommand = new DelegateCommand(OpenHomeTaskCommandHandler);
 
@@ -54,7 +56,11 @@ namespace Share_Class.INotifyModels
         public DelegateCommand OpenHomeTaskCommand { get; }
         private void OpenHomeTaskCommandHandler()
         {
-            // open HomeTask.xaml
+            HomeTask view = new HomeTask();
+            HomeTaskViewModel vm = new HomeTaskViewModel();
+            vm.InitializeHomeTask(this.homeTaskModel);
+            view.DataContext = vm;
+            view.Show();
         }
     }
 }

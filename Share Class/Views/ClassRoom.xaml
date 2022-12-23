@@ -5,6 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Share_Class.Views"
         xmlns:vm="clr-namespace:Share_Class.ViewModels"
+        xmlns:i="http://schemas.microsoft.com/xaml/behaviors"
         mc:Ignorable="d"
         Title="Share Class" Height="720" Width="1410" WindowStartupLocation="CenterScreen"
         WindowStyle="None" AllowsTransparency="True" Background="Transparent">
@@ -62,19 +63,30 @@
                 </Grid.ColumnDefinitions>
 
                 <ScrollViewer Grid.Column="0" HorizontalScrollBarVisibility="Disabled" VerticalScrollBarVisibility="Auto">
-                    <WrapPanel>
-                        <Border Margin="20,20,0,20" Width="300" Height="120" BorderBrush="Black" BorderThickness="1" CornerRadius="5">
-                            <Grid>
-                                <TextBlock Foreground="{StaticResource FontColor}" Margin="20" FontSize="25" MaxWidth="250" Height="30" VerticalAlignment="Top" HorizontalAlignment="Center" TextTrimming="CharacterEllipsis">User Name</TextBlock>
-                                <TextBlock Foreground="{StaticResource FontColor}" FontSize="20" VerticalAlignment="Bottom" Margin="20,10,10,10" MaxWidth="200" TextTrimming="CharacterEllipsis" HorizontalAlignment="Center">User Score</TextBlock>
-                            </Grid>
-                        </Border>
-                        <Border Margin="20,20,0,20" Width="300" Height="120" BorderBrush="Black" BorderThickness="1" CornerRadius="5"></Border>
-                        <Border Margin="20,20,0,20" Width="300" Height="120" BorderBrush="Black" BorderThickness="1" CornerRadius="5"></Border>
-                        <Border Margin="20,20,0,20" Width="300" Height="120" BorderBrush="Black" BorderThickness="1" CornerRadius="5"></Border>
-                        <Border Margin="20,20,0,20" Width="300" Height="120" BorderBrush="Black" BorderThickness="1" CornerRadius="5"></Border>
-                        <Border Margin="20,20,0,20" Width="300" Height="120" BorderBrush="Black" BorderThickness="1" CornerRadius="5"></Border>
-                    </WrapPanel>
+
+                    <ItemsControl ItemsSource="{Binding Users}">
+                        <ItemsControl.ItemsPanel>
+                            <ItemsPanelTemplate>
+                                <WrapPanel />
+                            </ItemsPanelTemplate>
+                        </ItemsControl.ItemsPanel>
+
+                        <ItemsControl.ItemTemplate>
+                            <DataTemplate>
+                                <Border Margin="20,20,0,20" Width="300" Height="120" BorderBrush="Black" BorderThickness="1" CornerRadius="5">
+                                    <Grid>
+                                        <TextBlock Text="{Binding Path=Name}" Foreground="{StaticResource FontColor}" Margin="20" FontSize="25" MaxWidth="250" 
+                                                   Height="30" VerticalAlignment="Top" HorizontalAlignment="Center" TextTrimming="CharacterEllipsis">
+                                        </TextBlock>
+
+                                        <TextBlock Text="{Binding Path=Score}" Foreground="{StaticResource FontColor}" FontSize="20" VerticalAlignment="Bottom" Margin="20,10,10,10" 
+                                                   MaxWidth="250" TextTrimming="CharacterEllipsis" HorizontalAlignment="Center"></TextBlock>
+                                    </Grid>
+                                </Border>
+                            </DataTemplate>
+                        </ItemsControl.ItemTemplate>
+                    </ItemsControl>
+
                 </ScrollViewer>
 
                 <Border Grid.Column="0" Width="1" BorderThickness="1" BorderBrush="Black" HorizontalAlignment="Right"></Border>
@@ -82,12 +94,19 @@
                 <ScrollViewer Grid.Column="1" HorizontalScrollBarVisibility="Disabled" VerticalScrollBarVisibility="Auto">
                     <Grid>
                         <Grid.RowDefinitions>
-                            <RowDefinition></RowDefinition>
+                            <RowDefinition Height="40"></RowDefinition>
                             <RowDefinition></RowDefinition>
                         </Grid.RowDefinitions>
 
                         <Border CornerRadius="3" BorderThickness="1.5" BorderBrush="Black" Height="30" Margin="100,10,100,0" Grid.Row="0">
-                            <TextBox Margin="1,0,1,0" Height="27" BorderThickness="0" FontWeight="Bold" FontSize="19">
+                            <TextBox Margin="5,0,5,0" Height="27" Foreground="{StaticResource FontColor}" BorderThickness="0" FontSize="19"
+                                     Text="{Binding SearchText, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}">
+
+                                <i:Interaction.Triggers>
+                                    <i:EventTrigger EventName="TextChanged">
+                                        <i:InvokeCommandAction Command="{Binding OnSearchTextInputCommand}"/>
+                                    </i:EventTrigger>
+                                </i:Interaction.Triggers>
 
                                 <TextBox.Style>
                                     <Style TargetType="TextBox" xmlns:sys="clr-namespace:System;assembly=mscorlib">
@@ -108,26 +127,34 @@
                             </TextBox>
                         </Border>
 
-                        <WrapPanel Grid.Row="1">
-                            <Border Margin="20,20,0,20" Width="300" Height="120" BorderBrush="Black" BorderThickness="1" CornerRadius="5">
-                                <Grid>
-                                    <TextBlock Foreground="{StaticResource FontColor}" Margin="20" FontSize="25" MaxWidth="250" Height="30" VerticalAlignment="Top" HorizontalAlignment="Center" TextTrimming="CharacterEllipsis">Hometask Name</TextBlock>
-                                    <TextBlock Foreground="{StaticResource FontColor}" FontSize="20" VerticalAlignment="Bottom" Margin="20,10,20,10" MaxWidth="260" TextTrimming="CharacterEllipsis" HorizontalAlignment="Left">deadline date</TextBlock>
-                                </Grid>
-                            </Border>
-                            <Border Margin="20,20,0,20" Width="300" Height="120" BorderBrush="Black" BorderThickness="1" CornerRadius="5"></Border>
-                            <Border Margin="20,20,0,20" Width="300" Height="120" BorderBrush="Black" BorderThickness="1" CornerRadius="5"></Border>
-                            <Border Margin="20,20,0,20" Width="300" Height="120" BorderBrush="Black" BorderThickness="1" CornerRadius="5"></Border>
-                            <Border Margin="20,20,0,20" Width="300" Height="120" BorderBrush="Black" BorderThickness="1" CornerRadius="5"></Border>
-                            <Border Margin="20,20,0,20" Width="300" Height="120" BorderBrush="Black" BorderThickness="1" CornerRadius="5"></Border>
-                            <Border Margin="20,20,0,20" Width="300" Height="120" BorderBrush="Black" BorderThickness="1" CornerRadius="5"></Border>
-                            <Border Margin="20,20,0,20" Width="300" Height="120" BorderBrush="Black" BorderThickness="1" CornerRadius="5"></Border>
-                            <Border Margin="20,20,0,20" Width="300" Height="120" BorderBrush="Black" BorderThickness="1" CornerRadius="5"></Border>
-                            <Border Margin="20,20,0,20" Width="300" Height="120" BorderBrush="Black" BorderThickness="1" CornerRadius="5"></Border>
-                            <Border Margin="20,20,0,20" Width="300" Height="120" BorderBrush="Black" BorderThickness="1" CornerRadius="5"></Border>
-                            <Border Margin="20,20,0,20" Width="300" Height="120" BorderBrush="Black" BorderThickness="1" CornerRadius="5"></Border>
-                            <Border Margin="20,20,0,20" Width="300" Height="120" BorderBrush="Black" BorderThickness="1" CornerRadius="5"></Border>
-                        </WrapPanel>
+                        <ItemsControl ItemsSource="{Binding ShownHomeTasks}" Grid.Row="1">
+                            <ItemsControl.ItemsPanel>
+                                <ItemsPanelTemplate>
+                                    <WrapPanel/>
+                                </ItemsPanelTemplate>
+                            </ItemsControl.ItemsPanel>
+
+                            <ItemsControl.ItemTemplate>
+                                <DataTemplate>
+                                    <Border Margin="20,20,0,20" Width="300" Height="120" BorderBrush="Black" BorderThickness="1" CornerRadius="5">
+                                        <Grid>
+                                            <TextBlock Text="{Binding Path=Name}" Foreground="{StaticResource ButtonsColor}" Margin="20" FontSize="25" MaxWidth="250" Height="30" 
+                                                       VerticalAlignment="Top" HorizontalAlignment="Center" TextTrimming="CharacterEllipsis">
+                                                
+                                                 <i:Interaction.Triggers>
+                                                    <i:EventTrigger EventName="MouseLeftButtonDown">
+                                                        <i:InvokeCommandAction Command="{Binding Path=OpenHomeTaskCommand}"/>
+                                                    </i:EventTrigger>
+                                                </i:Interaction.Triggers>
+                                            </TextBlock>
+
+                                            <TextBlock Text="{Binding Path=Deadline_Date}" Foreground="{StaticResource FontColor}" FontSize="20" VerticalAlignment="Bottom" 
+                                                       Margin="20,10,20,10" MaxWidth="260" TextTrimming="CharacterEllipsis" HorizontalAlignment="Left"></TextBlock>
+                                        </Grid>
+                                    </Border>
+                                </DataTemplate>
+                            </ItemsControl.ItemTemplate>
+                        </ItemsControl>
                     </Grid>
                 </ScrollViewer>
 
@@ -138,15 +165,13 @@
                             <Setter Property="CornerRadius" Value="25"/>
                         </Style>
                     </Button.Resources>
-                </Button>
 
-                <!--<CheckBox Grid.Column="1" Width="50" Height="50" VerticalAlignment="Bottom" HorizontalAlignment="Right">
                     <i:Interaction.Triggers>
-                        <i:EventTrigger EventName="Checked">
-                            <i:InvokeCommandAction Command="{Binding delegateCommand}" PassEventArgsToCommand="True"/>
+                        <i:EventTrigger EventName="Click">
+                            <i:InvokeCommandAction Command="{Binding CreateHomeTaskCommand}" PassEventArgsToCommand="True"/>
                         </i:EventTrigger>
                     </i:Interaction.Triggers>
-                </CheckBox>-->
+                </Button>
             </Grid>
         </ContentControl>
     </DockPanel>

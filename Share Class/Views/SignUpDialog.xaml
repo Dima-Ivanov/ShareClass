@@ -10,10 +10,6 @@
         Title="SignUp" Height="450" Width="800" WindowStartupLocation="CenterScreen"
         WindowStyle="None" AllowsTransparency="True" Background="Transparent">
 
-    <Window.DataContext>
-        <vm:SignUpViewModel />
-    </Window.DataContext>
-
     <WindowChrome.WindowChrome>
         <WindowChrome CaptionHeight="30">
 
@@ -145,7 +141,8 @@
 
                     <i:Interaction.Triggers>
                         <i:EventTrigger EventName="Click">
-                            <i:InvokeCommandAction Command="{Binding SignUpCommand}"/>
+                            <i:InvokeCommandAction Command="{Binding SignUpCommand}" CommandParameter="{Binding RelativeSource={RelativeSource
+                                                  Mode=FindAncestor,AncestorType=Window}}"/>
                         </i:EventTrigger>
                     </i:Interaction.Triggers>
                 </Button>

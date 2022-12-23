@@ -30,9 +30,6 @@ D:\Программы\C#\Share Class\Share Class\obj\Debug\Views\ClassRoom.g.cs
 D:\Программы\C#\Share Class\Share Class\obj\Debug\Views\HomeTask.g.cs
 D:\Программы\C#\Share Class\Share Class\obj\Debug\Views\ClassRoom.baml
 D:\Программы\C#\Share Class\Share Class\obj\Debug\Views\HomeTask.baml
-D:\Учеба\GitHub\Share Class\Share Class\bin\Debug\Share Class.exe.config
-D:\Учеба\GitHub\Share Class\Share Class\bin\Debug\Share Class.exe
-D:\Учеба\GitHub\Share Class\Share Class\bin\Debug\Share Class.pdb
 D:\Учеба\GitHub\Share Class\Share Class\obj\Debug\Share Class.csproj.AssemblyReference.cache
 D:\Учеба\GitHub\Share Class\Share Class\obj\Debug\Share Class.csproj.SuggestedBindingRedirects.cache
 D:\Учеба\GitHub\Share Class\Share Class\obj\Debug\Resources\ScrollBarResourceDictionary.baml
@@ -45,8 +42,28 @@ D:\Учеба\GitHub\Share Class\Share Class\obj\Debug\Views\LogInDialog.g.cs
 D:\Учеба\GitHub\Share Class\Share Class\obj\Debug\Views\SignUpDialog.g.cs
 D:\Учеба\GitHub\Share Class\Share Class\obj\Debug\Views\MainWindow.g.cs
 D:\Учеба\GitHub\Share Class\Share Class\obj\Debug\App.g.cs
+D:\Учеба\GitHub\Share Class\Share Class\obj\Debug\GeneratedInternalTypeHelper.g.cs
 D:\Учеба\GitHub\Share Class\Share Class\obj\Debug\Share Class_MarkupCompile.cache
 D:\Учеба\GitHub\Share Class\Share Class\obj\Debug\Share Class_MarkupCompile.lref
+D:\Учеба\GitHub\Share Class\Share Class\bin\Debug\Share Class.exe.config
+D:\Учеба\GitHub\Share Class\Share Class\bin\Debug\Share Class.exe
+D:\Учеба\GitHub\Share Class\Share Class\bin\Debug\Share Class.pdb
+D:\Учеба\GitHub\Share Class\Share Class\bin\Debug\BusinessLogicLayer.exe
+D:\Учеба\GitHub\Share Class\Share Class\bin\Debug\Microsoft.Xaml.Behaviors.dll
+D:\Учеба\GitHub\Share Class\Share Class\bin\Debug\Ninject.dll
+D:\Учеба\GitHub\Share Class\Share Class\bin\Debug\Prism.dll
+D:\Учеба\GitHub\Share Class\Share Class\bin\Debug\DataAccessLayer.exe
+D:\Учеба\GitHub\Share Class\Share Class\bin\Debug\EntityFramework.dll
+D:\Учеба\GitHub\Share Class\Share Class\bin\Debug\BusinessLogicLayer.pdb
+D:\Учеба\GitHub\Share Class\Share Class\bin\Debug\BusinessLogicLayer.exe.config
+D:\Учеба\GitHub\Share Class\Share Class\bin\Debug\Microsoft.Xaml.Behaviors.pdb
+D:\Учеба\GitHub\Share Class\Share Class\bin\Debug\Microsoft.Xaml.Behaviors.xml
+D:\Учеба\GitHub\Share Class\Share Class\bin\Debug\Ninject.xml
+D:\Учеба\GitHub\Share Class\Share Class\bin\Debug\Prism.pdb
+D:\Учеба\GitHub\Share Class\Share Class\bin\Debug\Prism.xml
+D:\Учеба\GitHub\Share Class\Share Class\bin\Debug\DataAccessLayer.pdb
+D:\Учеба\GitHub\Share Class\Share Class\bin\Debug\DataAccessLayer.exe.config
+D:\Учеба\GitHub\Share Class\Share Class\bin\Debug\EntityFramework.xml
 D:\Учеба\GitHub\Share Class\Share Class\obj\Debug\App.baml
 D:\Учеба\GitHub\Share Class\Share Class\obj\Debug\Views\ClassRoom.baml
 D:\Учеба\GitHub\Share Class\Share Class\obj\Debug\Views\CreateClassDialog.baml
@@ -60,21 +77,10 @@ D:\Учеба\GitHub\Share Class\Share Class\obj\Debug\Share Class.g.resources
 D:\Учеба\GitHub\Share Class\Share Class\obj\Debug\Share_Class.Properties.Resources.resources
 D:\Учеба\GitHub\Share Class\Share Class\obj\Debug\Share Class.csproj.GenerateResource.cache
 D:\Учеба\GitHub\Share Class\Share Class\obj\Debug\Share Class.csproj.CoreCompileInputs.cache
+D:\Учеба\GitHub\Share Class\Share Class\obj\Debug\Share Class.csproj.CopyComplete
 D:\Учеба\GitHub\Share Class\Share Class\obj\Debug\Share Class.exe
 D:\Учеба\GitHub\Share Class\Share Class\obj\Debug\Share Class.pdb
-D:\Учеба\GitHub\Share Class\Share Class\obj\Debug\GeneratedInternalTypeHelper.g.cs
-D:\Учеба\GitHub\Share Class\Share Class\bin\Debug\Prism.dll
-D:\Учеба\GitHub\Share Class\Share Class\bin\Debug\Prism.pdb
-D:\Учеба\GitHub\Share Class\Share Class\bin\Debug\Prism.xml
-D:\Учеба\GitHub\Share Class\Share Class\obj\Debug\Share Class.csproj.CopyComplete
-D:\Учеба\GitHub\Share Class\Share Class\bin\Debug\Microsoft.Xaml.Behaviors.dll
-D:\Учеба\GitHub\Share Class\Share Class\bin\Debug\Microsoft.Xaml.Behaviors.pdb
-D:\Учеба\GitHub\Share Class\Share Class\bin\Debug\Microsoft.Xaml.Behaviors.xml
-D:\Учеба\GitHub\Share Class\Share Class\bin\Debug\BusinessLogicLayer.exe
-D:\Учеба\GitHub\Share Class\Share Class\bin\Debug\BusinessLogicLayer.pdb
-D:\Учеба\GitHub\Share Class\Share Class\bin\Debug\BusinessLogicLayer.exe.config
-D:\Учеба\GitHub\Share Class\Share Class\bin\Debug\DataAccessLayer.exe
-D:\Учеба\GitHub\Share Class\Share Class\bin\Debug\EntityFramework.dll
-D:\Учеба\GitHub\Share Class\Share Class\bin\Debug\DataAccessLayer.pdb
-D:\Учеба\GitHub\Share Class\Share Class\bin\Debug\DataAccessLayer.exe.config
-D:\Учеба\GitHub\Share Class\Share Class\bin\Debug\EntityFramework.xml
+D:\Учеба\GitHub\Share Class\Share Class\bin\Debug\EntityFramework.SqlServer.dll
+D:\Учеба\GitHub\Share Class\Share Class\bin\Debug\EntityFramework.SqlServer.xml
+D:\Учеба\GitHub\Share Class\Share Class\obj\Debug\Views\CreateHomeTaskDialog.g.cs
+D:\Учеба\GitHub\Share Class\Share Class\obj\Debug\Views\CreateHomeTaskDialog.baml

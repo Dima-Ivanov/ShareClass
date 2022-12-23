@@ -5,6 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Share_Class.Views"
         xmlns:vm="clr-namespace:Share_Class.ViewModels"
+        xmlns:i="http://schemas.microsoft.com/xaml/behaviors"
         mc:Ignorable="d"
         Title="Share Class" Height="720" Width="1410" WindowStartupLocation="CenterScreen"
         WindowStyle="None" AllowsTransparency="True" Background="Transparent">
@@ -69,23 +70,7 @@
                     </Grid.RowDefinitions>
                     
                     <ScrollViewer Grid.Row="0" HorizontalScrollBarVisibility="Disabled" VerticalScrollBarVisibility="Auto">
-                        <TextBlock FontSize="20" TextWrapping="Wrap" Foreground="{StaticResource FontColor}">
-                        description description description description description description description description description 
-                    description description description description description description description description description 
-                    description description description description description description description description description 
-                    description description description description description description description description description 
-                    description description description description description description description description description 
-                    description description description description description description description description description 
-                    description description description description description description description description description 
-                    description description description description description description description description description
-                    description description description description description description description description description
-                    description description description description description description description description description
-                        description description description description description description description description description
-                        description description description description description description description description description
-                        description description description description description description description description description
-                        description description description description description description description description description
-                        description description description description description description description description description
-                        description description description description description description description description description
+                        <TextBlock FontSize="20" TextWrapping="Wrap" Foreground="{StaticResource FontColor}" Text="{Binding Description}" TextAlignment="Center">
                         </TextBlock>
                     </ScrollViewer>
 
@@ -104,58 +89,71 @@
                 </Grid>
 
                 <ScrollViewer Grid.Row="1" Margin="50,10,50,0" HorizontalScrollBarVisibility="Disabled" VerticalScrollBarVisibility="Auto">
-                    <WrapPanel Orientation="Vertical" x:Name="Wrap">
 
-                        <Border Margin="0,10,0,10" BorderBrush="Black" BorderThickness="1" CornerRadius="5" Height="180" Width="{Binding ElementName=Wrap, Path=ActualWidth}">
-                            
-                            <Grid>
-                                <Grid.RowDefinitions>
-                                    <RowDefinition></RowDefinition>
-                                    <RowDefinition Height="60"></RowDefinition>
-                                    <RowDefinition Height="40"></RowDefinition>
-                                </Grid.RowDefinitions>
-                                
-                                <ScrollViewer Grid.Row="0" Margin="10" HorizontalScrollBarVisibility="Disabled" VerticalScrollBarVisibility="Auto" MaxHeight="55" VerticalAlignment="Top">
-                                    <TextBlock FontSize="20" TextWrapping="Wrap" Foreground="{StaticResource FontColor}">
-                                        description description fakmfpklaspodsapmdpsampdasmpdas fmpalfpolsapmdpasdposadpsampodpoaspdoas ffffffffffffffffffff f f dmpoasmopdasopdopasmopdasmdpoasdmopa dasmpdas
-                                    </TextBlock>
-                                </ScrollViewer>
+                    <ItemsControl ItemsSource="{Binding Solutions}" x:Name="Wrap">
+                        <ItemsControl.ItemsPanel>
+                            <ItemsPanelTemplate>
+                                <WrapPanel />
+                            </ItemsPanelTemplate>
+                        </ItemsControl.ItemsPanel>
 
-                                <ScrollViewer Grid.Row="1" HorizontalScrollBarVisibility="Disabled" VerticalScrollBarVisibility="Auto">
-                                    <WrapPanel Orientation="Horizontal">
+                        <ItemsControl.ItemTemplate>
+                            <DataTemplate>
+                                <Border Margin="0,10,0,10" BorderBrush="Black" BorderThickness="1" CornerRadius="5" Height="180" Width="{Binding ElementName=Wrap, Path=ActualWidth}">
 
-                                        <Border Margin="10,10,0,10" Height="40" BorderBrush="Black" BorderThickness="1" CornerRadius="5">
-                                            <TextBlock Foreground="{StaticResource ButtonsColor}" FontSize="20" VerticalAlignment="Center" Margin="20,0,20,0" TextTrimming="CharacterEllipsis" HorizontalAlignment="Left">filename</TextBlock>
-                                        </Border>
-                                        <Border Margin="10,10,0,10" Height="40" BorderBrush="Black" BorderThickness="1" CornerRadius="5">
-                                            <TextBlock Foreground="{StaticResource ButtonsColor}" FontSize="20" VerticalAlignment="Center" Margin="20,0,20,0" TextTrimming="CharacterEllipsis" HorizontalAlignment="Left">filename</TextBlock>
-                                        </Border>
+                                    <Grid>
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition></RowDefinition>
+                                            <RowDefinition Height="60"></RowDefinition>
+                                            <RowDefinition Height="40"></RowDefinition>
+                                        </Grid.RowDefinitions>
 
-                                    </WrapPanel>
-                                </ScrollViewer>
+                                        <ScrollViewer Grid.Row="0" Margin="10" HorizontalScrollBarVisibility="Disabled" VerticalScrollBarVisibility="Auto" MaxHeight="55" VerticalAlignment="Top">
+                                            <TextBlock FontSize="20" TextWrapping="Wrap" Foreground="{StaticResource FontColor}" TextAlignment="Center" Text="{Binding Path=SolutionText}">
+                                                
+                                            </TextBlock>
+                                        </ScrollViewer>
 
-                                <Grid Grid.Row="2">
-                                    <Grid.ColumnDefinitions>
-                                        <ColumnDefinition></ColumnDefinition>
-                                        <ColumnDefinition></ColumnDefinition>
-                                    </Grid.ColumnDefinitions>
-                                    
-                                    <TextBlock Foreground="{StaticResource FontColor}" Grid.Column="0" FontSize="20" VerticalAlignment="Bottom" MaxWidth="300" Margin="10" TextTrimming="CharacterEllipsis" HorizontalAlignment="Left">student name</TextBlock>
+                                        <ScrollViewer Grid.Row="1" HorizontalScrollBarVisibility="Disabled" VerticalScrollBarVisibility="Auto">
+                                            <WrapPanel Orientation="Horizontal">
 
-                                    <Grid Grid.Column="1">
-                                        <Grid.ColumnDefinitions>
-                                            <ColumnDefinition></ColumnDefinition>
-                                            <ColumnDefinition></ColumnDefinition>
-                                        </Grid.ColumnDefinitions>
+                                                <Border Margin="10,10,0,10" Height="40" BorderBrush="Black" BorderThickness="1" CornerRadius="5">
+                                                    <TextBlock Foreground="{StaticResource ButtonsColor}" FontSize="20" VerticalAlignment="Center" Margin="20,0,20,0" TextTrimming="CharacterEllipsis" HorizontalAlignment="Left">filename</TextBlock>
+                                                </Border>
+                                                <Border Margin="10,10,0,10" Height="40" BorderBrush="Black" BorderThickness="1" CornerRadius="5">
+                                                    <TextBlock Foreground="{StaticResource ButtonsColor}" FontSize="20" VerticalAlignment="Center" Margin="20,0,20,0" TextTrimming="CharacterEllipsis" HorizontalAlignment="Left">filename</TextBlock>
+                                                </Border>
 
-                                        <TextBlock FontSize="20" Margin="0,0,20,0" HorizontalAlignment="Right" Foreground="{StaticResource FontColor}" Grid.Column="0">1</TextBlock>
-                                        <TextBlock FontSize="20" Margin="0,0,20,0" HorizontalAlignment="Right" Foreground="{StaticResource FontColor}" Grid.Column="1">2</TextBlock>
+                                            </WrapPanel>
+                                        </ScrollViewer>
+
+                                        <Grid Grid.Row="2">
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition></ColumnDefinition>
+                                                <ColumnDefinition></ColumnDefinition>
+                                            </Grid.ColumnDefinitions>
+
+                                            <TextBlock Foreground="{StaticResource FontColor}" Grid.Column="0" FontSize="20" VerticalAlignment="Bottom" MaxWidth="300" 
+                                                       Text="{Binding Path=UserName}" Margin="10" TextTrimming="CharacterEllipsis" HorizontalAlignment="Left">
+                                                
+                                            </TextBlock>
+
+                                            <Grid Grid.Column="1">
+                                                <Grid.ColumnDefinitions>
+                                                    <ColumnDefinition></ColumnDefinition>
+                                                    <ColumnDefinition></ColumnDefinition>
+                                                </Grid.ColumnDefinitions>
+
+                                                <TextBlock FontSize="20" Margin="0,0,20,0" HorizontalAlignment="Right" Foreground="{StaticResource FontColor}" Grid.Column="0">1</TextBlock>
+                                                <TextBlock FontSize="20" Margin="0,0,20,0" HorizontalAlignment="Right" Foreground="{StaticResource FontColor}" Grid.Column="1">2</TextBlock>
+                                            </Grid>
+                                        </Grid>
                                     </Grid>
-                                </Grid>
-                            </Grid>
-                        </Border>
+                                </Border>
+                            </DataTemplate>
+                        </ItemsControl.ItemTemplate>
+                    </ItemsControl>
 
-                    </WrapPanel>
                 </ScrollViewer>
 
                 <Grid Grid.Row="2" Margin="50,10,50,0">
@@ -167,7 +165,8 @@
 
                     <Border CornerRadius="3" BorderThickness="1.5" BorderBrush="Black" Grid.Row="0">
                         <TextBox Margin="5,0,5,0" BorderThickness="0" FontSize="19" TextWrapping="Wrap" Foreground="{StaticResource FontColor}"
-                                 ScrollViewer.HorizontalScrollBarVisibility="Disabled" ScrollViewer.VerticalScrollBarVisibility="Auto">
+                                 ScrollViewer.HorizontalScrollBarVisibility="Disabled" ScrollViewer.VerticalScrollBarVisibility="Auto"
+                                 Text="{Binding SolutionText}">
 
                             <TextBox.Style>
                                 <Style TargetType="TextBox" xmlns:sys="clr-namespace:System;assembly=mscorlib">
@@ -207,13 +206,20 @@
                             
                         </TextBlock>
 
-                        <Button Background="{StaticResource ButtonsColor}" FontSize="15" BorderBrush="Black" Width="100" Height="30" Grid.Column="1" HorizontalAlignment="Right" Margin="0,0,40,0">
+                        <Button Background="{StaticResource ButtonsColor}" FontSize="15" BorderBrush="Black" Width="100" Height="30" 
+                                Grid.Column="1" HorizontalAlignment="Right" Margin="0,0,40,0">
                             Submit!
                             <Button.Resources>
                                 <Style TargetType="Border">
                                     <Setter Property="CornerRadius" Value="8"/>
                                 </Style>
                             </Button.Resources>
+
+                            <i:Interaction.Triggers>
+                                <i:EventTrigger EventName="Click">
+                                    <i:InvokeCommandAction Command="{Binding CreateSolutionCommand}"/>
+                                </i:EventTrigger>
+                            </i:Interaction.Triggers>
                         </Button>
                     </Grid>
                 </Grid>

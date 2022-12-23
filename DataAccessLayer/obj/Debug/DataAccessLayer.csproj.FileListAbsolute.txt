@@ -32,4 +32,3 @@ D:\Учеба\GitHub\Share Class\DataAccessLayer\obj\Debug\DataAccessLayer.cspro
 D:\Учеба\GitHub\Share Class\DataAccessLayer\obj\Debug\DataAccessLayer.csproj.CopyComplete
 D:\Учеба\GitHub\Share Class\DataAccessLayer\obj\Debug\DataAccessLayer.exe
 D:\Учеба\GitHub\Share Class\DataAccessLayer\obj\Debug\DataAccessLayer.pdb
-D:\Учеба\GitHub\Share Class\DataAccessLayer\obj\Debug\DataAccessLayer_Content.g.cs

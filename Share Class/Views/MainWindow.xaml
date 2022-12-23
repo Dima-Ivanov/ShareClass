@@ -15,10 +15,6 @@
         </WindowChrome>
     </WindowChrome.WindowChrome>
 
-    <Window.DataContext>
-        <vm:MainWindowViewModel />
-    </Window.DataContext>
-    
     <DockPanel x:Name="RootWindow" Background="{StaticResource MainColor}" Margin="7">
 
         <DockPanel.Effect>
@@ -51,7 +47,7 @@
                 </Button.Resources>
             </Button>
 
-            <TextBlock Margin="75,0,0,0" HorizontalAlignment="Center" FontSize="16" FontWeight="Bold" x:Name="User_name" Text="share class"></TextBlock>
+            <TextBlock Margin="75,0,0,0" HorizontalAlignment="Center" FontSize="16" FontWeight="Bold" x:Name="User_name" Text="{Binding UserName}"></TextBlock>
         </DockPanel>
 
         <ContentControl>

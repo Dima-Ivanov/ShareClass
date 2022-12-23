@@ -61,6 +61,9 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DbDataOperations.cs" />
+    <Compile Include="Interfaces\IDbDataOperations.cs" />
+    <Compile Include="Interfaces\IModel.cs" />
     <Compile Include="Models\ClassRoomModel.cs" />
     <Compile Include="Models\ClassRoomsUsersModel.cs" />
     <Compile Include="Models\HomeTaskModel.cs" />

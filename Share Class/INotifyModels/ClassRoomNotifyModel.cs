@@ -11,19 +11,24 @@ using Share_Class.ViewModels;
 
 namespace Share_Class.INotifyModels
 {
-    public class ClassRoomIModel : INotifyBase
+    public class ClassRoomNotifyModel : INotifyBase
     {
-        public ClassRoomIModel(ClassRoomModel classRoomModel) 
+        public ClassRoomNotifyModel(ClassRoomModel classRoomModel) 
         {
             OpenClassRoomCommand = new DelegateCommand(OpenClassRoomCommandHandler);
 
             this.classRoomModel = classRoomModel;
 
+            this.ID = classRoomModel.ID;
             this.Name = classRoomModel.Name;
             this.Teacher_Name = classRoomModel.Teacher_Name;
+            this.Description = classRoomModel.Description;
+            this.Students_Count = classRoomModel.Students_Count;
         }
 
         private ClassRoomModel classRoomModel;
+
+        public int ID { get; set; }
 
         private string _name;
         public string Name 
@@ -50,6 +55,34 @@ namespace Share_Class.INotifyModels
             {
                 _teacherName = value;
                 OnPropertyChanged("Teacher_Name");
+            }
+        }
+
+        private string _description;
+        public string Description
+        {
+            get
+            {
+                return _description;
+            }
+            set
+            {
+                _description = value;
+                OnPropertyChanged("Description");
+            }
+        }
+
+        private int _studentsCount;
+        public int Students_Count
+        {
+            get
+            {
+                return _studentsCount;
+            }
+            set
+            {
+                _studentsCount = value;
+                OnPropertyChanged("_studentsCount");
             }
         }
 

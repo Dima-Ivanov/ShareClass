@@ -1,5 +1,7 @@
 ﻿using Prism.Commands;
 using Share_Class.MVVM;
+using Share_Class.Views;
+using Share_Class.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -7,6 +9,10 @@ using System.Linq;
 using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
+using Share_Class.Global;
+using System.Security.Policy;
+using System.Security.Cryptography;
+using System.Windows;
 
 namespace Share_Class.ViewModels
 {
@@ -15,10 +21,10 @@ namespace Share_Class.ViewModels
         public LogInViewModel()
         {
             SignUpHintCommand = new DelegateCommand(SignUpHintCommandHandler);
-            LogInCommand = new DelegateCommand(LogInCommandHandler);
+            LogInCommand = new DelegateCommand<object>(LogInCommandHandler);
         }
 
-        private string _login;
+        private string _login = "";
         public string Login
         {
             get
@@ -32,7 +38,7 @@ namespace Share_Class.ViewModels
             }
         }
 
-        private string _password;
+        private string _password = "";
         public string Password
         {
             get
@@ -49,13 +55,26 @@ namespace Share_Class.ViewModels
         public DelegateCommand SignUpHintCommand { get; }
         private void SignUpHintCommandHandler()
         {
-            // open sign up dialog window
+            SignUpDialog signUpDialog = new SignUpDialog();
+            SignUpViewModel signUpViewModel = new SignUpViewModel();
+            signUpDialog.DataContext = signUpViewModel;
+            signUpDialog.ShowDialog();
         }
 
-        public DelegateCommand LogInCommand { get; }
-        private void LogInCommandHandler()
+        public DelegateCommand<object> LogInCommand { get; }
+        private void LogInCommandHandler(object param)
         {
-            // log in to system, close this window
+            var user = GlobalSettings.dbDataOperations.UserModels.FirstOrDefault(u => u.Login == _login);
+
+            if (user == null) return;
+
+            var hashCode = GlobalUtils.CalculateHash(_password);
+
+            if (user.Password_Hash == hashCode && param is Window window)
+            {
+                GlobalSettings.CurentUser = user;
+                window.Close();
+            }
         }
     }
 }

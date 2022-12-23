@@ -13,35 +13,75 @@ using Share_Class.MVVM;
 using Share_Class.INotifyModels;
 using BusinessLogicLayer.Models;
 using Share_Class.Views;
+using Share_Class.Global;
+using BusinessLogicLayer.Interfaces;
+using BusinessLogicLayer;
 
 namespace Share_Class.ViewModels
 {
     public class MainWindowViewModel : INotifyBase
     {
+        private IDbDataOperations dbDataOperations;
+        private NotifyModels notifyModels;
+
         public MainWindowViewModel()
         {
+            LogInDialog logInDialog = new LogInDialog();
+            LogInViewModel logInViewModel = new LogInViewModel();
+            logInDialog.DataContext = logInViewModel;
+            logInDialog.ShowDialog();
+
+            this.dbDataOperations = GlobalSettings.dbDataOperations;
+            this.notifyModels = GlobalSettings.NotifyModels;
+
+            UserName = GlobalSettings.CurentUser.Login;
+
             OnSearchTextInputCommand = new DelegateCommand(OnSearchTextInputCommandHandler);
             SearchClassRoomCommand = new DelegateCommand(SearchClassRoomCommandHandler);
             CreateClassRoomCommand = new DelegateCommand(CreateClassRoomCommandHandler);
 
-            ClassRooms = new ObservableCollection<ClassRoomIModel>();
-            HomeTasks = new ObservableCollection<HomeTaskIModel>();
+            LoadClassRooms();
 
-            ClassRoomModel classRoomModel = new ClassRoomModel();
-            classRoomModel.Name = "Test Class";
-            classRoomModel.Teacher_Name = "Fomina";
+            LoadHomeTasks();
+        }
 
-            ClassRoomModel classRoomModel1 = new ClassRoomModel();
-            classRoomModel1.Name = "Test Class1";
-            classRoomModel1.Teacher_Name = "Dimas";
+        private void LoadHomeTasks()
+        {
+            HomeTasks = new ObservableCollection<HomeTaskNotifyModel>();
 
-            ClassRooms.Add(new ClassRoomIModel(classRoomModel));
-            ClassRooms.Add(new ClassRoomIModel(classRoomModel1));
+            HashSet<int> classRoomsIDs = new HashSet<int>();
 
-            HomeTaskModel homeTaskModel = new HomeTaskModel();
-            homeTaskModel.Name = "Mathesha";
-            homeTaskModel.Deadline_Date = DateTime.Now;
-            HomeTasks.Add(new HomeTaskIModel(homeTaskModel));
+            foreach(var classRoom in ClassRooms)
+            {
+                classRoomsIDs.Add(classRoom.ID);
+            }
+
+            foreach (var task in GlobalSettings.dbDataOperations.HomeTaskModels)
+            {
+                if (classRoomsIDs.Contains(task.ClassRoom_ID) && task.Deadline_Date > DateTime.Now)
+                {
+                    HomeTasks.Add(new HomeTaskNotifyModel(task));
+                }
+            }
+
+            HomeTasks = new ObservableCollection<HomeTaskNotifyModel>(HomeTasks.OrderBy(i => i.Deadline_Date).ThenBy(i => i.Name));
+        }
+
+        private void LoadClassRooms()
+        {
+            ClassRooms = new ObservableCollection<ClassRoomNotifyModel>();
+
+            Dictionary<int, ClassRoomNotifyModel> dict = new Dictionary<int, ClassRoomNotifyModel>();
+
+            foreach (var classRoom in notifyModels.ClassRoomNotifyModels)
+            {
+                dict.Add(classRoom.ID, classRoom);
+            }
+
+            foreach (var classRoomsUsers in dbDataOperations.ClassRoomsUsersModels.Where(i => i.User_ID == GlobalSettings.CurentUser.ID))
+            {
+                ClassRooms.Add(dict[classRoomsUsers.ClassRoom_ID]);
+            }
 
             ShownClassRooms = ClassRooms;
         }
@@ -60,8 +100,22 @@ namespace Share_Class.ViewModels
             }
         }
 
-        private ObservableCollection<ClassRoomIModel> _classRooms;
-        public ObservableCollection<ClassRoomIModel> ClassRooms
+        private string _userName;
+        public string UserName
+        {
+            get
+            {
+                return _userName;
+            }
+            set
+            {
+                _userName = value;
+                OnPropertyChanged("UserName");
+            }
+        }
+
+        private ObservableCollection<ClassRoomNotifyModel> _classRooms;
+        public ObservableCollection<ClassRoomNotifyModel> ClassRooms
         {
             get
             {
@@ -74,8 +128,8 @@ namespace Share_Class.ViewModels
             }
         }
 
-        private ObservableCollection<ClassRoomIModel> _shownClassRooms;
-        public ObservableCollection<ClassRoomIModel> ShownClassRooms
+        private ObservableCollection<ClassRoomNotifyModel> _shownClassRooms;
+        public ObservableCollection<ClassRoomNotifyModel> ShownClassRooms
         {
             get
             {
@@ -83,13 +137,13 @@ namespace Share_Class.ViewModels
             }
             set
             {
-                _shownClassRooms = new ObservableCollection<ClassRoomIModel>(value.OrderBy(c => c.Name).ThenBy(c => c.Teacher_Name));
+                _shownClassRooms = new ObservableCollection<ClassRoomNotifyModel>(value.OrderBy(c => c.Name).ThenBy(c => c.Teacher_Name));
                 OnPropertyChanged("ShownClassRooms");
             }
         }
 
-        private ObservableCollection<HomeTaskIModel> _homeTasks;
-        public ObservableCollection<HomeTaskIModel> HomeTasks
+        private ObservableCollection<HomeTaskNotifyModel> _homeTasks;
+        public ObservableCollection<HomeTaskNotifyModel> HomeTasks
         {
             get
             {
@@ -97,7 +151,7 @@ namespace Share_Class.ViewModels
             }
             set
             {
-                _homeTasks = new ObservableCollection<HomeTaskIModel>(value.OrderBy(h => h.Deadline_Date));
+                _homeTasks = new ObservableCollection<HomeTaskNotifyModel>(value.OrderBy(h => h.Deadline_Date));
                 OnPropertyChanged("HomeTasks");
             }
         }
@@ -111,7 +165,7 @@ namespace Share_Class.ViewModels
             }
             else
             {
-                var newShownClassRooms = new ObservableCollection<ClassRoomIModel>();
+                var newShownClassRooms = new ObservableCollection<ClassRoomNotifyModel>();
 
                 var lowerSearch = _searchText.ToLower();
 
@@ -135,7 +189,10 @@ namespace Share_Class.ViewModels
         {
             JoinClassDialog joinClassDialog = new JoinClassDialog();
             joinClassDialog.DataContext = new JoinClassViewModel();
-            joinClassDialog.Show();
+            joinClassDialog.ShowDialog();
+
+            LoadClassRooms();
+            LoadHomeTasks();
         }
 
         public DelegateCommand CreateClassRoomCommand { get; }
@@ -143,7 +200,9 @@ namespace Share_Class.ViewModels
         {
             CreateClassDialog createClassDialog = new CreateClassDialog();
             createClassDialog.DataContext = new CreateClassViewModel();
-            createClassDialog.Show();
+            createClassDialog.ShowDialog();
+            
+            LoadClassRooms();
         }
 
         //Stream[] checkStream = null;
